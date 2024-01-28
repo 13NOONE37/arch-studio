@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+body {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+}
+input,
+textarea,
+button,
+select,
+a {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --dark-blue: hsl(225, 13%, 12%);
+  --dark-grey: hsl(226, 6%, 40%);
+  --medium-grey: hsl(223, 7%, 53%);
+  --light-grey: hsl(225, 17%, 82%);
+  --very-light-grey: hsl(230, 21%, 95%);
+  --red: hsl(0, 68%, 61%);
+  --fw-bold: 800;
+  --fw-medium: 500;
+  --fw-regular: 400;
+}
+.text--heading__800 {
+  font-size: 13.888rem;
+  letter-spacing: -0.277rem;
+  font-weight: var(--fw-bold);
+}
+.text--heading__700 {
+  font-size: 5.333rem;
+  font-weight: var(--fw-bold);
+}
+.text--heading__600 {
+  font-size: 4rem;
+  letter-spacing: -0.111rem;
+  font-weight: var(--fw-bold);
+}
+.text--heading__500 {
+  font-size: 1.777rem;
+  font-weight: var(--fw-bold);
+}
+.text--body {
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+}
+.text--body__bold {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+}

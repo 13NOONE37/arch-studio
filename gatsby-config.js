@@ -18,7 +18,13 @@ module.exports = {
         path: `${__dirname}/portfolio`,
       },
     },
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `images`,
+        path: `${__dirname}/images`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -27,5 +33,6 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-mdx',
   ],
 };

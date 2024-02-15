@@ -1,16 +1,20 @@
 import * as React from 'react';
 import { Seo } from '../components/seo';
-import Button from '../components/button/button';
+import Layout from '../components/layout/layout';
+import Hero from '../components/pagesComponents/index/hero/hero';
+import Welcome from '../components/pagesComponents/index/welcome/welcome';
+import Featured from '../components/pagesComponents/index/featured/featured';
 
 const IndexPage = () => {
   return (
-    <main>
-      asdf
-      <Button hasArrow>Button 1</Button>
-    </main>
+    <Layout title={'Home'}>
+      <Hero />
+      <Welcome />
+      <Featured />
+    </Layout>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => <Seo title={'Welcome to Arch Studio'} />;
+export const Head = () => <Seo title={'Home'} />;

@@ -1,0 +1,160 @@
+.welcome {
+  margin-top: 4rem;
+  padding-top: 4rem;
+
+  position: relative;
+}
+.welcome::after {
+  content: '';
+  position: absolute;
+  left: 1.833rem;
+  top: 0;
+  width: 65px;
+  height: 1px;
+  background-color: var(--light-grey);
+}
+.welcome_section {
+  padding: 0 1.833rem;
+  padding-bottom: 6.222rem;
+}
+
+.welcome_image {
+  display: none;
+}
+.background_heading {
+  display: none;
+}
+.heading {
+  font-size: 2.666rem;
+  line-height: 2.666rem;
+
+  max-width: 10ch;
+}
+.textBlock {
+  margin-top: 2rem;
+  color: var(--dark-grey);
+  line-height: 1.333rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.banner {
+  position: relative;
+}
+.banner::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.banner_content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+
+  padding: 0 1.833rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.277rem;
+}
+.banner_content h3 {
+  color: var(--white);
+  font-size: 2.666rem;
+  line-height: 2.666rem;
+
+  max-width: 10ch;
+  margin-bottom: 0.25em;
+}
+.banner_cta {
+}
+.banner_image {
+  aspect-ratio: 375/560;
+}
+@media screen and (min-width: 768px) {
+  .welcome::after {
+    display: none;
+  }
+  .background_heading {
+    display: block;
+    width: 100%;
+
+    font-size: 6.666rem;
+    line-height: 6.666rem;
+
+    color: var(--very-light-grey);
+
+    position: absolute;
+    left: 0;
+    top: -0.25em;
+    z-index: -1;
+
+    text-align: center;
+  }
+  .banner_image {
+    aspect-ratio: 573/560;
+  }
+  .heading {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .textBlock {
+    margin-top: 3.222rem;
+  }
+  .welcome_section {
+    padding-bottom: 12.9444rem;
+  }
+  .banner_content {
+    padding: 0 3.222rem;
+  }
+  .banner_content h3 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media screen and (min-width: 1304px) {
+  .welcome {
+    padding-top: 11rem;
+  }
+  .welcome_section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0;
+    gap: 6.944rem;
+  }
+  .welcome_section_content {
+    width: 446px;
+  }
+  .welcome_image {
+    display: block;
+    width: 350px;
+    height: 568px;
+  }
+  .background_heading {
+    font-size: 13.888rem;
+    line-height: 13.888rem;
+    top: 0.18em;
+    left: 0;
+    z-index: 1;
+    text-align: left;
+  }
+  .banner {
+    margin-top: 11.111rem;
+  }
+  .banner_content {
+    padding: 11.111rem;
+  }
+  .banner_image {
+    aspect-ratio: 1110/560;
+  }
+}

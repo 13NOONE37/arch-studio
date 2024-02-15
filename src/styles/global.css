@@ -6,10 +6,46 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap'); */
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('../assets/fonts/LeagueSpartan-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('../assets/fonts/LeagueSpartan-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('../assets/fonts/LeagueSpartan-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   font-family: 'League Spartan', sans-serif;
-  font-size: 18px;
+  min-height: 100vh;
+}
+body::-webkit-scrollbar {
+  width: var(--scroll-width);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--very-light-grey);
+  box-shadow: inset 1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--medium-grey);
 }
 input,
 textarea,
@@ -27,33 +63,13 @@ a {
   --light-grey: hsl(225, 17%, 82%);
   --very-light-grey: hsl(230, 21%, 95%);
   --red: hsl(0, 68%, 61%);
+  --white: hsl(0, 0%, 100%);
   --fw-bold: 800;
   --fw-medium: 500;
   --fw-regular: 400;
-}
-.text--heading__800 {
-  font-size: 13.888rem;
-  letter-spacing: -0.277rem;
-  font-weight: var(--fw-bold);
-}
-.text--heading__700 {
-  font-size: 5.333rem;
-  font-weight: var(--fw-bold);
-}
-.text--heading__600 {
-  font-size: 4rem;
-  letter-spacing: -0.111rem;
-  font-weight: var(--fw-bold);
-}
-.text--heading__500 {
-  font-size: 1.777rem;
-  font-weight: var(--fw-bold);
-}
-.text--body {
-  font-size: 1rem;
-  font-weight: var(--fw-medium);
-}
-.text--body__bold {
-  font-size: 1rem;
-  font-weight: var(--fw-bold);
+  --max-width: 1110px;
+  --width: calc(100vw - 194px);
+  --section-padding: 1.777rem;
+  font-size: 18px;
+  --scroll-width: 6px;
 }

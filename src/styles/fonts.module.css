@@ -1,0 +1,26 @@
+.heading__800 {
+  font-size: 13.888rem;
+  letter-spacing: -0.277rem;
+  font-weight: var(--fw-bold);
+}
+.heading__700 {
+  font-size: 5.333rem;
+  font-weight: var(--fw-bold);
+}
+.heading__600 {
+  font-size: 4rem;
+  letter-spacing: -0.111rem;
+  font-weight: var(--fw-bold);
+}
+.heading__500 {
+  font-size: 1.777rem;
+  font-weight: var(--fw-bold);
+}
+.body {
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+}
+.body__bold {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+}

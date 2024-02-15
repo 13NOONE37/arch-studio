@@ -1,0 +1,19 @@
+.main {
+  width: 100%;
+  min-height: calc(
+    100vh - 92px - 373px
+  ); /*100% - header height - footer height*/
+}
+@media screen and (min-width: 768px) {
+  .main {
+    max-width: var(--max-width);
+    width: var(--width);
+    min-height: calc(100vh - 152px - 120px);
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 1304px) {
+  .main {
+    min-height: calc(100vh - 152px - 200px);
+  }
+}

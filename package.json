@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
+    "classnames": "^2.5.1",
     "gatsby": "^5.13.2",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
@@ -24,6 +25,8 @@
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "i": "^0.3.7",
+    "npm": "^10.4.0",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

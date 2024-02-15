@@ -1,0 +1,33 @@
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 1.444em 1.888em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.333rem;
+
+  transition: background 0.05s ease-out;
+}
+.button span {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.button svg {
+  stroke: var(--white);
+}
+
+.button:hover {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+.button:active {
+  background-color: var(--light-grey);
+  color: var(--white);
+}

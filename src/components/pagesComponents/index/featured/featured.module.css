@@ -1,12 +1,118 @@
 .featured {
+  margin: auto;
+  margin-top: 4.333rem;
+  padding: 0 var(--section-padding);
+  padding-bottom: 7.333rem;
+
+  width: 100%;
+  max-width: 520px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
 }
 .heading {
+  font-size: 2.666rem;
+  line-height: 2.666rem;
 }
 .projects {
+  grid-area: 2/1/2/3;
+  counter-reset: project;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.333rem;
+  margin-top: 2.333rem;
+}
+.project {
+  position: relative;
+  width: 100%;
+}
+.project_content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.01),
+    rgba(0, 0, 0, 0.499)
+  );
+  z-index: 1;
+
+  padding: 1.333rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.25em;
+}
+.project_counter {
+  display: none;
+}
+.project_heading {
+  color: var(--white);
+}
+.project_info {
+  color: var(--white);
+  opacity: 0.75;
+}
+.project_image {
+  aspect-ratio: 311/240;
 }
 .cta {
+  grid-area: 3/1/3/3;
+  margin: 0 auto;
+  margin-top: 1.333rem;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
+  .featured {
+    max-width: unset;
+  }
+  .projects {
+    margin-top: 4.722rem;
+  }
+  .project_content {
+    padding: 2.222rem;
+  }
+  .project_image {
+    aspect-ratio: 573/240;
+  }
+  .project_counter {
+    display: block;
+    position: absolute;
+    right: 0.1em;
+    top: 0.1em;
+    color: #fff;
+    opacity: 0.5;
+    line-height: 0.5em;
+  }
+  .heading {
+    align-self: center;
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .cta {
+    grid-area: 1/2/1/3;
+    width: 170px;
+    margin: unset;
+    justify-self: end;
+  }
 }
 @media screen and (min-width: 1304px) {
+  .featured {
+    padding: unset;
+    padding-bottom: 11.111rem;
+    margin-top: 11.111rem;
+  }
+  .projects {
+    flex-direction: row;
+  }
+  .project_image {
+    aspect-ratio: 350/560;
+  }
+  .project_counter {
+    right: -0.04em;
+  }
 }

@@ -32,28 +32,40 @@ const Welcome = () => {
         relativePath: { eq: "home/desktop/image-welcome.jpg" }
       ) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData(quality: 100, placeholder: BLURRED)
         }
       }
       bannerMobile: file(
         relativePath: { eq: "home/mobile/image-small-team.jpg" }
       ) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            quality: 100
+            placeholder: BLURRED
+          )
         }
       }
       bannerTablet: file(
         relativePath: { eq: "home/tablet/image-small-team.jpg" }
       ) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            quality: 100
+            placeholder: BLURRED
+          )
         }
       }
       bannerDesktop: file(
         relativePath: { eq: "home/desktop/image-small-team.jpg" }
       ) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            quality: 100
+            placeholder: BLURRED
+          )
         }
       }
     }
@@ -62,11 +74,11 @@ const Welcome = () => {
   const welcomeImageSrc = getImage(data.welcomeImage);
   const bannerImageSrc = withArtDirection(getImage(data.bannerDesktop), [
     {
-      media: '(max-width: 768px)',
+      media: '(max-width: 767px)',
       image: getImage(data.bannerMobile),
     },
     {
-      media: '(max-width: 1304px)',
+      media: '(max-width: 1303px)',
       image: getImage(data.bannerTablet),
     },
   ]);

@@ -21,7 +21,7 @@ const Hero = () => {
       # name
       # sourceInstanceName
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+        gatsbyImageData(layout: FULL_WIDTH, quality: 100, placeholder: BLURRED)
       }
     }
 
@@ -96,11 +96,11 @@ const Hero = () => {
       alt: 'Picture of building Project Paramour',
       images: withArtDirection(getImage(data.paramourDesktop), [
         {
-          media: '(max-width: 768px)',
+          media: '(max-width: 767px)',
           image: getImage(data.paramourMobile),
         },
         {
-          media: '(max-width: 1304px)',
+          media: '(max-width: 1303px)',
           image: getImage(data.paramourTablet),
         },
       ]),
@@ -111,11 +111,11 @@ const Hero = () => {
       alt: 'Picture of building Seraph Station',
       images: withArtDirection(getImage(data.seraphDesktop), [
         {
-          media: '(max-width: 768px)',
+          media: '(max-width: 767px)',
           image: getImage(data.seraphMobile),
         },
         {
-          media: '(max-width: 1304px)',
+          media: '(max-width: 1303px)',
           image: getImage(data.seraphTablet),
         },
       ]),
@@ -126,11 +126,11 @@ const Hero = () => {
       alt: 'Picture of building Federal II Tower',
       images: withArtDirection(getImage(data.federalDesktop), [
         {
-          media: '(max-width: 768px)',
+          media: '(max-width: 767px)',
           image: getImage(data.federalMobile),
         },
         {
-          media: '(max-width: 1304px)',
+          media: '(max-width: 1303px)',
           image: getImage(data.federalTablet),
         },
       ]),
@@ -141,11 +141,11 @@ const Hero = () => {
       alt: 'Picture of building Trinity Bank Tower',
       images: withArtDirection(getImage(data.trinityDesktop), [
         {
-          media: '(max-width: 768px)',
+          media: '(max-width: 767px)',
           image: getImage(data.trinityMobile),
         },
         {
-          media: '(max-width: 1304px)',
+          media: '(max-width: 1303px)',
           image: getImage(data.trinityTablet),
         },
       ]),

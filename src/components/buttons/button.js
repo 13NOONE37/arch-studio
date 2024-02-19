@@ -7,7 +7,7 @@ import { body__bold } from '../../styles/fonts.module.css';
 
 const Button = ({ hasArrow, additionalClasses = [], children, ...props }) => {
   return (
-    <button {...props} className={cx(button, body__bold, ...additionalClasses)}>
+    <button className={cx(button, body__bold, ...additionalClasses)} {...props}>
       {children ? <span>{children}</span> : ''}
       {hasArrow ? <ArrowIcon /> : ''}
     </button>

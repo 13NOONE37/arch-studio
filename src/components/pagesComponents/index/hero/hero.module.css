@@ -1,6 +1,22 @@
 .hero {
   position: relative;
 }
+.carousel_container {
+  aspect-ratio: 375/560;
+  overflow: hidden;
+}
+.carousel_elements {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 400%;
+  transition: transform 1s ease;
+}
+.carousel_element {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 .hero_image {
   aspect-ratio: 375/560;
 }
@@ -49,6 +65,9 @@
   .hero_content {
     padding: 0 3.222rem;
   }
+  .carousel_container {
+    aspect-ratio: 573/720;
+  }
   .hero_image {
     aspect-ratio: 573/720;
   }
@@ -66,7 +85,9 @@
   .hero_content {
     padding: 0 10.555rem;
   }
-
+  .carousel_container {
+    aspect-ratio: 1110/720;
+  }
   .hero_image {
     aspect-ratio: 1110/720;
   }

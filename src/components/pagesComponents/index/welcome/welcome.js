@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 
 import { graphql, navigate, useStaticQuery } from 'gatsby';
@@ -83,12 +83,14 @@ const Welcome = () => {
     },
   ]);
 
+  // TODO: GSAP Scroll Trigger animations
+
   return (
     <section className={welcome}>
       <div className={welcome_section}>
         <span className={cx(background_heading, heading__800)}>Welcome</span>
         <div className={welcome_section_content}>
-          <h2 className={cx(heading, heading__700)}>Welcome to Arch Studio</h2>
+          <h1 className={cx(heading, heading__700)}>Welcome to Arch Studio</h1>
           <div className={cx(textBlock, body)}>
             <p>
               We have a unique network and skillset to help bring your projects
@@ -112,7 +114,9 @@ const Welcome = () => {
         <GatsbyImage
           className={welcome_image}
           image={welcomeImageSrc}
-          alt={'adf'}
+          alt={
+            'Minimalist architecture building on water: A sleek, modern structure with clean lines and serene surroundings.'
+          }
         />
       </div>
       <div className={banner}>

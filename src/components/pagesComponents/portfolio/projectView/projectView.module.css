@@ -1,0 +1,68 @@
+.projectView {
+  position: relative;
+}
+
+.image {
+  aspect-ratio: 311/240;
+}
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  padding: var(--section-padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.heading {
+  color: var(--white);
+  font-size: 2.666rem;
+  line-height: 2.666rem;
+  max-width: 30rem;
+
+  margin-bottom: 1rem;
+}
+.description {
+  color: var(--white);
+  margin-bottom: 4.6111rem;
+  line-height: 1.333rem;
+  max-width: 40ch;
+}
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 0 3.222rem;
+  }
+  .image {
+    aspect-ratio: 573/240;
+  }
+  .heading {
+    color: var(--white);
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 1.555rem;
+  }
+  .description {
+    margin-bottom: 2.333rem;
+  }
+}
+@media screen and (min-width: 1304px) {
+  .content {
+    padding: 0 10.555rem;
+  }
+  .image {
+    aspect-ratio: 350/560;
+  }
+}

@@ -30,6 +30,7 @@
 }
 .pageMask:has(~ .mobile_menu_visible) {
   opacity: 1;
+  pointer-events: auto;
 }
 .mobile_menu {
   position: fixed;

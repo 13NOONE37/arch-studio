@@ -1,0 +1,23 @@
+.projects_container {
+  padding: 0 var(--section-padding);
+  padding-bottom: 7.333rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.333rem;
+}
+@media screen and (min-width: 768px) {
+  .projects_container {
+    padding: unset;
+    padding-bottom: 11.111rem;
+  }
+}
+@media screen and (min-width: 1304px) {
+  .projects_container {
+    padding: unset;
+    padding-bottom: 8.888rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.777rem 1.666rem;
+  }
+}

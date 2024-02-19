@@ -1,0 +1,134 @@
+.welcome {
+  position: relative;
+  margin-bottom: 4.222rem;
+}
+.image {
+  aspect-ratio: 375/240;
+  position: relative;
+}
+.image::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+.image::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 343px;
+  height: 45px;
+  background-color: var(--white);
+  z-index: 2;
+}
+.backgroundHeading {
+  display: none;
+}
+.content {
+  padding: 0 var(--section-padding);
+}
+.heading {
+  padding-top: 1.16rem;
+  font-size: 2.666rem;
+  line-height: 2.666rem;
+  color: var(--dark-blue);
+  max-width: 12ch;
+}
+.description {
+  margin-top: 2rem;
+  color: var(--dark-grey);
+  /* max-width: 42ch; */
+}
+@media screen and (min-width: 768px) {
+  .image {
+    aspect-ratio: 573/720;
+  }
+  .image::after {
+    left: unset;
+    right: 0;
+    width: calc(100% - 58px);
+    height: 431px;
+  }
+  .backgroundHeading {
+    font-size: 6.666rem;
+    line-height: 0;
+    letter-spacing: -0.166rem;
+    color: var(--very-light-grey);
+    display: block;
+    position: absolute;
+    z-index: 2;
+    right: 0.1em;
+    bottom: calc(431px + 0.1em);
+  }
+  .content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 58px);
+    height: 431px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 3.277rem;
+  }
+
+  .description {
+    margin-top: 2.111rem;
+    color: var(--dark-grey);
+    max-width: 70ch;
+  }
+  .heading {
+    font-size: 4rem;
+    line-height: 4rem;
+    padding-top: 4rem;
+
+    position: relative;
+  }
+  .heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 65px;
+    height: 1px;
+    background-color: var(--light-grey);
+  }
+}
+@media screen and (min-width: 1304px) {
+  .welcome {
+    display: flex;
+    margin-bottom: 11.111rem;
+  }
+  .image {
+    aspect-ratio: 635/720;
+    width: 635px;
+  }
+  .image::after {
+    left: unset;
+    right: 0;
+    width: 153px;
+    height: 503px;
+  }
+  .backgroundHeading {
+    font-size: 13.888rem;
+    line-height: 13.888rem;
+    right: 0;
+    bottom: calc(503px - 0.36em);
+  }
+  .content {
+    right: 0;
+    width: calc(100% - 635px);
+    padding: unset;
+    padding-left: 1.333rem;
+  }
+  .description {
+    max-width: 42ch;
+  }
+}

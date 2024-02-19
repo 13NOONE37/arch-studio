@@ -25,6 +25,7 @@
   display: none;
 }
 .heading {
+  color: var(--dark-blue);
   font-size: 2.666rem;
   line-height: 2.666rem;
 
@@ -33,11 +34,12 @@
 .textBlock {
   margin-top: 2rem;
   color: var(--dark-grey);
-  line-height: 1.333rem;
 
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  max-width: 40ch;
 }
 .banner {
   position: relative;
@@ -109,8 +111,11 @@
   }
   .textBlock {
     margin-top: 3.222rem;
+    max-width: 54ch;
   }
   .welcome_section {
+    padding-left: unset;
+    padding-right: unset;
     padding-bottom: 12.9444rem;
   }
   .banner_content {
@@ -139,6 +144,9 @@
     display: block;
     width: 350px;
     height: 568px;
+  }
+  .textBlock {
+    max-width: 42ch;
   }
   .background_heading {
     font-size: 13.888rem;

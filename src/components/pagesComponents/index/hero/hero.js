@@ -6,6 +6,9 @@ import TabButton from '../../../buttons/tabButton/tabButton';
 
 import {
   hero,
+  carousel_container,
+  carousel_elements,
+  carousel_element,
   hero_image,
   hero_mask,
   hero_content,
@@ -154,14 +157,12 @@ const Hero = () => {
   const CAROUSEL_INTERVAL = 8000;
 
   const [currentHero, setHero] = useState(0);
-  //TODO: animacje przejścia jak w carousel albo inne
   //TODO: użyć gsap na całej stronie do przejść
-  //TODO: używać na całej stronie BLURRED do obrazków tak jak w tym komponencie
+
   useEffect(() => {
     const interval = setInterval(() => {
       setHero((prev) => (prev + 1) % carousel.length);
     }, CAROUSEL_INTERVAL);
-
     return () => {
       clearInterval(interval);
     };
@@ -169,22 +170,30 @@ const Hero = () => {
 
   return (
     <section className={hero}>
-      <GatsbyImage
-        className={hero_image}
-        image={carousel[currentHero]?.images}
-        alt={carousel[currentHero]?.alt}
-      />
-
-      <div className={hero_mask}></div>
-      <div className={hero_content}>
-        <h1 className={heading__700}>{carousel[currentHero]?.name}</h1>
-        <p className={body}>{carousel[currentHero]?.description}</p>
-        <TextArrowButton
-          onClick={() => navigate('/portfolio')}
-          additionalClasses={[hero_cta_button]}
+      <div className={carousel_container}>
+        <div
+          className={carousel_elements}
+          style={{ transform: `translateX(-${currentHero * 25}%)` }}
         >
-          See Our Portfolio
-        </TextArrowButton>
+          {carousel.map(({ images, alt, name, description }, index) => (
+            <div className={carousel_element} key={`carousel_${index}`}>
+              <GatsbyImage className={hero_image} image={images} alt={alt} />
+              <div className={hero_mask}></div>
+              <div className={hero_content}>
+                <h1 className={heading__700}>{name}</h1>
+                <p className={body}>{description}</p>
+                <TextArrowButton
+                  onClick={() => navigate('/portfolio')}
+                  additionalClasses={[hero_cta_button]}
+                  tabIndex={currentHero === index ? 0 : -1}
+                  aria-hidden={currentHero !== index ? 'true' : undefined}
+                >
+                  See Our Portfolio
+                </TextArrowButton>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className={heroTabButtons}>
         {Array.from({ length: carousel.length }).map((_, index) => (

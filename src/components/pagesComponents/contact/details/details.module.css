@@ -1,0 +1,118 @@
+.details {
+  padding-bottom: 4.055rem;
+}
+.heading {
+  margin: 0 var(--section-padding);
+  padding-top: 3.777rem;
+
+  font-size: 2.666rem;
+  line-height: 2.666rem;
+  position: relative;
+}
+.heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 65px;
+  height: 1px;
+  background-color: var(--light-grey);
+}
+.offices {
+  margin-top: 2.222rem;
+  padding: 0 var(--section-padding);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.222rem;
+}
+.office {
+}
+.office h4 {
+  color: var(--dark-grey);
+}
+.office p {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-grey);
+  margin-top: 0.777em;
+}
+.office p span {
+}
+.viewButton {
+  background-color: transparent;
+  color: var(--dark-blue);
+  padding-left: 0.33rem;
+}
+.viewButton:hover,
+.viewButton:focus {
+  background-color: transparent;
+  color: var(--dark-blue);
+  text-decoration: underline;
+  text-decoration-color: var(--dark-blue);
+}
+.viewButton svg {
+  stroke: var(--dark-blue);
+}
+.mapContainer {
+  margin-top: 4rem;
+  width: 100%;
+  height: 367px;
+}
+.map {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .details {
+    padding-bottom: 11.055rem;
+  }
+  .heading {
+    margin: unset;
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .offices {
+    padding-left: unset;
+    padding-right: unset;
+  }
+  .office {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+  .viewButton {
+    grid-area: 1/2/3/2;
+  }
+  .mapContainer {
+    margin: auto;
+    margin-top: 12.555rem;
+    height: 560px;
+  }
+}
+@media screen and (min-width: 1304px) {
+  .details {
+    padding-bottom: 11.055rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  .heading {
+    max-width: 8ch;
+  }
+  .offices {
+    padding-top: 3.777rem;
+    flex-direction: row;
+  }
+  .office {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .viewButton {
+    margin-top: 3.277rem;
+  }
+  .mapContainer {
+    grid-area: 2/1/2/3;
+  }
+}

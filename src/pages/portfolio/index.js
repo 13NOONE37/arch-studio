@@ -13,4 +13,4 @@ const PortfolioPage = () => {
 
 export default PortfolioPage;
 
-export const Head = () => <Seo title={'asdf'} />;
+export const Head = () => <Seo title={'Portfolio'} />;

@@ -17,4 +17,4 @@ const AboutPage = () => {
 
 export default AboutPage;
 
-export const Head = () => <Seo title={'asdf'} />;
+export const Head = () => <Seo title={'About Us'} />;

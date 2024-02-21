@@ -55,6 +55,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title={'asdf'} />;
+export const Head = () => <Seo title={'Portfolio'} />;
 
 export default PortfolioProject;

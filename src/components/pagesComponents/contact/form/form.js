@@ -100,7 +100,6 @@ const Input = ({
   touched,
   error,
 }) => {
-  console.log(type, touched, error);
   return (
     <div className={styles.inputContainer}>
       <input

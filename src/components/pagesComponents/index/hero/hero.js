@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { graphql, navigate, useStaticQuery } from 'gatsby';
 
 import TextArrowButton from '../../../buttons/textArrowButton/textArrowButton';
@@ -17,6 +17,8 @@ import {
 } from './hero.module.css';
 import { heading__700, body } from '../../../../styles/fonts.module.css';
 import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -155,10 +157,7 @@ const Hero = () => {
     },
   ];
   const CAROUSEL_INTERVAL = 8000;
-
   const [currentHero, setHero] = useState(0);
-  //TODO: użyć gsap na całej stronie do przejść
-
   useEffect(() => {
     const interval = setInterval(() => {
       setHero((prev) => (prev + 1) % carousel.length);
@@ -167,6 +166,31 @@ const Hero = () => {
       clearInterval(interval);
     };
   }, [currentHero]);
+
+  const tabButtonsRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      tabButtonsRef.current,
+      { x: '25%' },
+      {
+        x: 0,
+        ease: 'power3.inOut',
+        duration: 0.75,
+      },
+    );
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: -100 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: 'power3.inOut',
+        duration: 0.75,
+      },
+    );
+  });
 
   return (
     <section className={hero}>
@@ -179,7 +203,10 @@ const Hero = () => {
             <div className={carousel_element} key={`carousel_${index}`}>
               <GatsbyImage className={hero_image} image={images} alt={alt} />
               <div className={hero_mask}></div>
-              <div className={hero_content}>
+              <div
+                className={hero_content}
+                ref={index === 0 ? contentRef : undefined}
+              >
                 <h1 className={heading__700}>{name}</h1>
                 <p className={body}>{description}</p>
                 <TextArrowButton
@@ -195,7 +222,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className={heroTabButtons}>
+      <div className={heroTabButtons} ref={tabButtonsRef}>
         {Array.from({ length: carousel.length }).map((_, index) => (
           <TabButton
             onClick={() => setHero(index)}

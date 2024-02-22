@@ -24,6 +24,9 @@ import {
   body,
 } from '../../../../styles/fonts.module.css';
 import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 const Welcome = () => {
   const data = useStaticQuery(graphql`
@@ -83,15 +86,109 @@ const Welcome = () => {
     },
   ]);
 
-  // TODO: GSAP Scroll Trigger animations
+  const headingRef = useRef(null);
+  const textRef = useRef(null);
+  const contentRef = useRef(null);
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
+
+    const paragraphs = [...textRef.current.children];
+    mm.add('(max-width:1303px)', () => {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          ease: 'power3.inOut',
+          duration: 0.75,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: '0% 75%',
+            markers: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        paragraphs,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          ease: 'power3.inOut',
+          duration: 0.75,
+          stagger: 0.25,
+          scrollTrigger: {
+            trigger: paragraphs,
+            start: '0% 75%',
+            markers: true,
+          },
+        },
+      );
+    });
+    mm.add('(min-width:1304px)', () => {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          ease: 'power3.inOut',
+          duration: 0.75,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: '0% 75%',
+            markers: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        paragraphs,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          ease: 'power3.inOut',
+          duration: 0.75,
+          stagger: 0.25,
+          scrollTrigger: {
+            trigger: paragraphs,
+            start: '0% 75%',
+            markers: true,
+          },
+        },
+      );
+    });
+
+    gsap.fromTo(
+      contentRef.current.children,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: 'power3.inOut',
+        duration: 0.75,
+        scrollTrigger: {
+          trigger: contentRef.current,
+          start: '0% 50%',
+          markers: true,
+        },
+      },
+    );
+  });
 
   return (
     <section className={welcome}>
       <div className={welcome_section}>
         <span className={cx(background_heading, heading__800)}>Welcome</span>
         <div className={welcome_section_content}>
-          <h1 className={cx(heading, heading__700)}>Welcome to Arch Studio</h1>
-          <div className={cx(textBlock, body)}>
+          <h1 className={cx(heading, heading__700)} ref={headingRef}>
+            Welcome to Arch Studio
+          </h1>
+          <div className={cx(textBlock, body)} ref={textRef}>
             <p>
               We have a unique network and skillset to help bring your projects
               to life. Our small team of highly skilled individuals combined
@@ -121,7 +218,7 @@ const Welcome = () => {
       </div>
       <div className={banner}>
         <GatsbyImage className={banner_image} image={bannerImageSrc} alt={''} />
-        <div className={banner_content}>
+        <div className={banner_content} ref={contentRef}>
           <h3 className={heading__700}>Small team, big ideas</h3>
           <TextArrowButton
             additionalClasses={[banner_cta]}

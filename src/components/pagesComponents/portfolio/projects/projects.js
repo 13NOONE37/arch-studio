@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { projects_container } from './projects.module.css';
 import { graphql, useStaticQuery } from 'gatsby';
 import Project from '../project/project';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Projects = () => {
   const {
@@ -49,8 +52,31 @@ const Projects = () => {
     }
   `);
 
+  const containerRef = useRef(null);
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const elements = [...containerRef.current.children];
+
+    elements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          ease: 'power3.inOut',
+          duration: 0.75,
+          scrollTrigger: {
+            trigger: element,
+            start: '0% 100%',
+          },
+        },
+      );
+    });
+  });
+
   return (
-    <section className={projects_container}>
+    <section className={projects_container} ref={containerRef}>
       {projects.map(({ id, frontmatter }) => (
         <Project key={id} {...frontmatter} />
       ))}

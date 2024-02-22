@@ -19,7 +19,7 @@ const centerPosition = [
   (markers[0][0] + markers[1][0]) / 2,
   (markers[0][1] + markers[1][1]) / 2,
 ];
-const defaultZoom = 6;
+const defaultZoom = 4;
 const minZoom = 3;
 const maxZoom = 16;
 

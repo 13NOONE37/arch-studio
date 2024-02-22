@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 
 import { graphql, navigate, useStaticQuery } from 'gatsby';
@@ -23,6 +23,9 @@ import {
   body,
 } from '../../../../styles/fonts.module.css';
 import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 const Featured = () => {
   const data = useStaticQuery(graphql`
@@ -72,10 +75,32 @@ const Featured = () => {
     }
   `);
 
+  const featuredRef = useRef(null);
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(
+      featuredRef.current.children,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        ease: 'power3.inOut',
+        duration: 0.75,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: featuredRef.current.children,
+          start: '0% 75%',
+          markers: true,
+        },
+      },
+    );
+  });
+
   return (
     <section className={featured}>
       <h2 className={cx(heading, heading__500)}>Featured</h2>
-      <div className={projects}>
+      <div className={projects} ref={featuredRef}>
         {data.allMdx.nodes.map((data, index) => (
           <Project
             data={data.frontmatter}

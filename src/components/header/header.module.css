@@ -63,16 +63,12 @@
   transform: translateX(0%);
 }
 
-.mobile_link {
-}
 .mobile_link_element {
   color: var(--dark-blue);
   text-decoration: none;
 }
 .links_element {
   display: none;
-}
-.link_element {
 }
 
 .link_text_element {

@@ -12,8 +12,10 @@ import {
   links_element,
   link_element,
   link_text_element,
+  link_text_element__active,
   hamburger_element,
   pageMask,
+  pageMask__visible,
   mobile_menu,
   mobile_menu_visible,
   mobile_link,
@@ -22,12 +24,13 @@ import {
 import { body__bold, heading__500 } from '../../styles/fonts.module.css';
 
 export const links = [
-  { name: 'Porfolio', path: '/portfolio' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Porfolio', path: '/portfolio/' },
+  { name: 'About Us', path: '/about/' },
+  { name: 'Contact', path: '/contact/' },
 ];
 
-const Header = ({ title }) => {
+const Header = ({ title, location }) => {
+  const currentPath = location?.pathname;
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 
@@ -51,13 +54,22 @@ const Header = ({ title }) => {
       <Link to={'/'} className={header_logo}>
         <Logo />
       </Link>
-      <div className={pageMask}></div>
       <MobileMenu menuRef={menuRef} showMenu={showMenu} />
+      <div
+        className={cx(pageMask, {
+          [pageMask__visible]: showMenu,
+        })}
+      ></div>
 
       <ul className={links_element}>
         {links.map(({ name, path }) => (
           <li className={link_element} key={`hl_${path}`}>
-            <Link to={path} className={cx(link_text_element, body__bold)}>
+            <Link
+              to={path}
+              className={cx(link_text_element, body__bold, {
+                [link_text_element__active]: path === currentPath,
+              })}
+            >
               {name}
             </Link>
           </li>

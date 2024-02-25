@@ -3,10 +3,10 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import { main } from './layout.module.css';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, location, children }) => {
   return (
     <>
-      <Header title={title} />
+      <Header title={title} location={location} />
       <main className={main}>{children}</main>
       <Footer />
     </>

@@ -10,6 +10,9 @@ import TextArrowButton from '../../../buttons/textArrowButton/textArrowButton';
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 const markers = [
   [36.201288, -83.539968],
@@ -36,10 +39,34 @@ const ContactDetails = () => {
     setPosition(coords);
     mapRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const headingRef = useRef(null);
+  const detailsRef = useRef(null);
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      detailsRef.current.children,
+      { xPercent: -10, opacity: 0 },
+      {
+        xPercent: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power3.inOut',
+        stagger: 0.2,
+
+        scrollTrigger: {
+          trigger: detailsRef.current,
+          start: '0% 75%',
+        },
+      },
+    );
+  });
   return (
     <section className={styles.details}>
-      <h3 className={cx(styles.heading, heading__500)}>Contact Details</h3>
-      <div className={styles.offices}>
+      <h3 className={cx(styles.heading, heading__500)} ref={headingRef}>
+        Contact Details
+      </h3>
+      <div className={styles.offices} ref={detailsRef}>
         <Office
           name={'Main Office'}
           action={() => {
@@ -66,7 +93,7 @@ const ContactDetails = () => {
         <MapContainer
           center={centerPosition}
           zoom={defaultZoom}
-          scrollWheelZoom={false}
+          // scrollWheelZoom={false}
           className={styles.map}
         >
           <TileLayer

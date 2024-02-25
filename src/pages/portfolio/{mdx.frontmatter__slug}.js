@@ -55,6 +55,12 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title={'Portfolio'} />;
+export const Head = ({
+  data: {
+    mdx: {
+      frontmatter: { title, description },
+    },
+  },
+}) => <Seo title={'Portfolio'} description={`${title}; ${description}`} />;
 
 export default PortfolioProject;

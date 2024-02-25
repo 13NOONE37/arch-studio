@@ -72,5 +72,5 @@ a {
   --width: calc(100vw - 194px);
   --section-padding: 1.777rem;
   font-size: 18px;
-  --scroll-width: 6px;
+  --scroll-width: 4px;
 }

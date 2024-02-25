@@ -106,7 +106,6 @@ const Welcome = () => {
           scrollTrigger: {
             trigger: headingRef.current,
             start: '0% 75%',
-            markers: true,
           },
         },
       );
@@ -123,7 +122,6 @@ const Welcome = () => {
           scrollTrigger: {
             trigger: paragraphs,
             start: '0% 75%',
-            markers: true,
           },
         },
       );
@@ -140,7 +138,6 @@ const Welcome = () => {
           scrollTrigger: {
             trigger: headingRef.current,
             start: '0% 75%',
-            markers: true,
           },
         },
       );
@@ -157,7 +154,6 @@ const Welcome = () => {
           scrollTrigger: {
             trigger: paragraphs,
             start: '0% 75%',
-            markers: true,
           },
         },
       );
@@ -174,7 +170,6 @@ const Welcome = () => {
         scrollTrigger: {
           trigger: contentRef.current,
           start: '0% 50%',
-          markers: true,
         },
       },
     );

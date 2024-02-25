@@ -91,7 +91,6 @@ const Featured = () => {
         scrollTrigger: {
           trigger: featuredRef.current.children,
           start: '0% 75%',
-          markers: true,
         },
       },
     );

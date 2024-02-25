@@ -2,9 +2,13 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  // flags: {
+  //   DEV_SSR: true,
+  // },
   siteMetadata: {
     title: `arch-studio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://13noone37.github.io/arch-studio/`,
+    description: `Welcome to Arch Studio. We have a unique network and skillset to help bring your projects to life. `,
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -34,5 +38,17 @@ module.exports = {
       },
     },
     'gatsby-plugin-mdx',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Arch Studio`,
+        short_name: `Arch`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#1B1D23`,
+        icon: 'src/assets/favicon.png',
+        display: `standalone`,
+      },
+    },
   ],
 };

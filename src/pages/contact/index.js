@@ -5,9 +5,9 @@ import ContactWelcome from '../../components/pagesComponents/contact/welcome/wel
 import ContactDetails from '../../components/pagesComponents/contact/details/details';
 import ContactForm from '../../components/pagesComponents/contact/form/form';
 
-const ContactPage = () => {
+const ContactPage = ({ location }) => {
   return (
-    <Layout title={'Contact'}>
+    <Layout title={'Contact'} location={location}>
       <ContactWelcome />
       <ContactDetails />
       <ContactForm />
@@ -17,4 +17,9 @@ const ContactPage = () => {
 
 export default ContactPage;
 
-export const Head = () => <Seo title={'Contact'} />;
+export const Head = () => (
+  <Seo
+    title={'Contact'}
+    description={`Tell us about your project. We’d love to hear more about your project. Please, leave a message below or give us a call.`}
+  />
+);

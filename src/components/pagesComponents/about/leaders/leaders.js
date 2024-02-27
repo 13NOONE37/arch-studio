@@ -63,6 +63,7 @@ const AboutLeaders = () => {
 
   const leadersRef = useRef(null);
   useGSAP(() => {
+    return;
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.fromTo(

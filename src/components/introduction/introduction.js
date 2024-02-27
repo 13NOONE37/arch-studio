@@ -36,6 +36,7 @@ const Introduction = ({
   const headingRef = useRef(null);
 
   useGSAP(() => {
+    return;
     const mm = gsap.matchMedia();
 
     const maskTL = gsap.timeline({

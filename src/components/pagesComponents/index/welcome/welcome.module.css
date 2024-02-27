@@ -127,6 +127,7 @@
 @media screen and (min-width: 1304px) {
   .welcome {
     padding-top: 11rem;
+    margin-top: unset;
   }
   .welcome_section {
     display: flex;

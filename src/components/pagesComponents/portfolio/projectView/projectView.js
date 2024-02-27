@@ -4,7 +4,6 @@ import * as styles from './projectView.module.css';
 import { heading__600, body } from '../../../../styles/fonts.module.css';
 
 import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image';
-import ArrowButton from '../../../buttons/arrowButton/arrowButton';
 import { navigate } from 'gatsby';
 import TextArrowButton from '../../../buttons/textArrowButton/textArrowButton';
 import { useGSAP } from '@gsap/react';

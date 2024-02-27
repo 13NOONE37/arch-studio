@@ -227,6 +227,7 @@ const Hero = () => {
           <TabButton
             onClick={() => setHero(index)}
             isActive={currentHero === index}
+            key={`tabButton_${index}`}
           >{`0${index + 1}`}</TabButton>
         ))}
       </div>

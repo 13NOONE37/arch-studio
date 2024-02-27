@@ -10,7 +10,6 @@ import {
   header_logo,
   pageIndicator,
   links_element,
-  link_element,
   link_text_element,
   link_text_element__active,
   hamburger_element,
@@ -18,7 +17,6 @@ import {
   pageMask__visible,
   mobile_menu,
   mobile_menu_visible,
-  mobile_link,
   mobile_link_element,
 } from './header.module.css';
 import { body__bold, heading__500 } from '../../styles/fonts.module.css';
@@ -46,7 +44,7 @@ const Header = ({ title, location }) => {
     return () => {
       document.removeEventListener('click', handleMenu);
     };
-  }, [showMenu]);
+  }, []);
 
   return (
     <header className={header}>
@@ -63,7 +61,7 @@ const Header = ({ title, location }) => {
 
       <ul className={links_element}>
         {links.map(({ name, path }) => (
-          <li className={link_element} key={`hl_${path}`}>
+          <li key={`hl_${path}`}>
             <Link
               to={path}
               className={cx(link_text_element, body__bold, {
@@ -99,7 +97,7 @@ function MobileMenu({ menuRef, showMenu }) {
       ref={menuRef}
     >
       {links.map(({ name, path }) => (
-        <li className={mobile_link} key={`mm_${path}`}>
+        <li key={`mm_${path}`}>
           <Link to={path} className={cx(mobile_link_element, heading__500)}>
             {name}
           </Link>

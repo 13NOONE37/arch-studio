@@ -203,13 +203,14 @@ const Welcome = () => {
             </p>
           </div>
         </div>
-        <GatsbyImage
-          className={welcome_image}
-          image={welcomeImageSrc}
-          alt={
-            'Minimalist architecture building on water: A sleek, modern structure with clean lines and serene surroundings.'
-          }
-        />
+        <div className={welcome_image}>
+          <GatsbyImage
+            image={welcomeImageSrc}
+            alt={
+              'Minimalist architecture building on water: A sleek, modern structure with clean lines and serene surroundings.'
+            }
+          />
+        </div>
       </div>
       <div className={banner}>
         <GatsbyImage className={banner_image} image={bannerImageSrc} alt={''} />

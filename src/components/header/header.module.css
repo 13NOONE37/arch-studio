@@ -62,7 +62,6 @@
 .mobile_menu_visible {
   transform: translateX(0%);
 }
-
 .mobile_link_element {
   color: var(--dark-blue);
   text-decoration: none;

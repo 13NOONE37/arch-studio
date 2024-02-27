@@ -2,9 +2,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  flags: {
-    DEV_SSR: true,
-  },
   siteMetadata: {
     title: `arch-studio`,
     siteUrl: `https://13noone37.github.io/arch-studio/`,

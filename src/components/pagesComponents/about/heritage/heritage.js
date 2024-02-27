@@ -85,7 +85,9 @@ const AboutHeritage = () => {
           project.
         </p>
       </div>
-      <GatsbyImage image={imageSrc} className={styles.image} alt={'Building'} />
+      <div className={styles.image}>
+        <GatsbyImage image={imageSrc} alt={'Building'} />
+      </div>
     </section>
   );
 };

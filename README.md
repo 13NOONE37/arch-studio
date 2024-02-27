@@ -5,4 +5,4 @@
 ### Links
 
 - Solution URL: [link](https://github.com/13NOONE37/arch-studio)
-- Live Site URL: [link](https://main--arch-studio-13noone37.netlify.app/)
+- Live Site URL: [link](https://arch-studio-13noone37.netlify.app/)

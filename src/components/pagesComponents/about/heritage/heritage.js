@@ -25,7 +25,6 @@ const AboutHeritage = () => {
 
   const textRef = useRef(null);
   useGSAP(() => {
-    return;
     gsap.registerPlugin(ScrollTrigger);
     const mm = gsap.matchMedia();
     const paragraphs = textRef.current.children;

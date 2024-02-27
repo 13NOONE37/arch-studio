@@ -170,7 +170,6 @@ const Hero = () => {
   const tabButtonsRef = useRef(null);
   const contentRef = useRef(null);
   useGSAP(() => {
-    return;
     gsap.fromTo(
       tabButtonsRef.current,
       { x: '25%' },

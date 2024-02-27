@@ -46,7 +46,6 @@ const ContactDetails = () => {
   const headingRef = useRef(null);
   const detailsRef = useRef(null);
   useGSAP(() => {
-    return;
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       detailsRef.current.children,

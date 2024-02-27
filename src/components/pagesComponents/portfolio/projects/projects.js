@@ -54,7 +54,6 @@ const Projects = () => {
 
   const containerRef = useRef(null);
   useGSAP(() => {
-    return;
     gsap.registerPlugin(ScrollTrigger);
     const elements = [...containerRef.current.children];
 

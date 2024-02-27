@@ -90,7 +90,6 @@ const Welcome = () => {
   const textRef = useRef(null);
   const contentRef = useRef(null);
   useGSAP(() => {
-    return;
     gsap.registerPlugin(ScrollTrigger);
     const mm = gsap.matchMedia();
 

@@ -32,7 +32,6 @@ const ProjectView = ({
   const imageRef = useRef(null);
 
   useGSAP(() => {
-    return;
     gsap.fromTo(
       textRef.current,
       {

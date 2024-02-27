@@ -77,7 +77,6 @@ const Featured = () => {
 
   const featuredRef = useRef(null);
   useGSAP(() => {
-    return;
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.fromTo(

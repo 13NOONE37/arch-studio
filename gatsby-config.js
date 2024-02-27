@@ -2,9 +2,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  // flags: {
-  //   DEV_SSR: true,
-  // },
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `arch-studio`,
     siteUrl: `https://13noone37.github.io/arch-studio/`,
@@ -48,6 +48,12 @@ module.exports = {
         theme_color: `#1B1D23`,
         icon: 'src/assets/favicon.png',
         display: `standalone`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
   ],

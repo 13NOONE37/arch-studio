@@ -16,7 +16,7 @@ import { body__bold } from '../../styles/fonts.module.css';
 const Footer = () => {
   return (
     <footer className={footer}>
-      <Link to={'/'} className={footer_logo}>
+      <Link to={'/'} className={footer_logo} aria-label="Go to home page">
         <Logo />
       </Link>
       <ul className={footer_links}>

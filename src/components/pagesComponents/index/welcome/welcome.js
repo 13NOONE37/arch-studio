@@ -215,7 +215,7 @@ const Welcome = () => {
       <div className={banner}>
         <GatsbyImage className={banner_image} image={bannerImageSrc} alt={''} />
         <div className={banner_content} ref={contentRef}>
-          <h3 className={heading__700}>Small team, big ideas</h3>
+          <h2 className={heading__700}>Small team, big ideas</h2>
           <TextArrowButton
             additionalClasses={[banner_cta]}
             onClick={() => navigate('/about')}

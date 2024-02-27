@@ -169,7 +169,6 @@ const Hero = () => {
 
   const tabButtonsRef = useRef(null);
   const contentRef = useRef(null);
-
   useGSAP(() => {
     gsap.set(tabButtonsRef.current, { visibility: 'visible' });
     gsap.fromTo(

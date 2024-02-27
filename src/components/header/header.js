@@ -49,7 +49,7 @@ const Header = ({ title, location }) => {
   return (
     <header className={header}>
       <span className={pageIndicator}>{title || ''} </span>
-      <Link to={'/'} className={header_logo}>
+      <Link to={'/'} className={header_logo} aria-label="Go to home page">
         <Logo />
       </Link>
       <MobileMenu menuRef={menuRef} showMenu={showMenu} />

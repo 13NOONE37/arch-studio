@@ -20,6 +20,7 @@ import {
   mobile_link_element,
 } from './header.module.css';
 import { body__bold, heading__500 } from '../../styles/fonts.module.css';
+import Hamburger from './hamburger/hamburger';
 
 export const links = [
   { name: 'Porfolio', path: '/portfolio/' },
@@ -33,56 +34,53 @@ const Header = ({ title, location }) => {
   const menuRef = useRef(null);
 
   const handleMenu = (e) => {
-    if (!showMenu || !menuRef.current || menuRef.current.contains(e.target)) {
-      return;
-    }
+    if (!menuRef.current || menuRef.current.contains(e.target)) return;
+
     setShowMenu(false);
   };
   useEffect(() => {
     document.addEventListener('click', handleMenu);
 
-    return () => {
-      document.removeEventListener('click', handleMenu);
-    };
+    return () => document.removeEventListener('click', handleMenu);
   }, []);
 
   return (
-    <header className={header}>
-      <span className={pageIndicator}>{title || ''} </span>
-      <Link to={'/'} className={header_logo} aria-label="Go to home page">
-        <Logo />
-      </Link>
-      <MobileMenu menuRef={menuRef} showMenu={showMenu} />
+    <>
+      <header className={header}>
+        <span className={pageIndicator}>{title || ''} </span>
+        <Link to={'/'} className={header_logo} aria-label="Go to home page">
+          <Logo />
+        </Link>
+        <MobileMenu menuRef={menuRef} showMenu={showMenu} />
+
+        <ul className={links_element}>
+          {links.map(({ name, path }) => (
+            <li key={`hl_${path}`}>
+              <Link
+                to={path}
+                className={cx(link_text_element, body__bold, {
+                  [link_text_element__active]: path === currentPath,
+                })}
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Hamburger
+          isOpen={showMenu}
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowMenu((prev) => !prev);
+          }}
+        />
+      </header>
       <div
         className={cx(pageMask, {
           [pageMask__visible]: showMenu,
         })}
       ></div>
-
-      <ul className={links_element}>
-        {links.map(({ name, path }) => (
-          <li key={`hl_${path}`}>
-            <Link
-              to={path}
-              className={cx(link_text_element, body__bold, {
-                [link_text_element__active]: path === currentPath,
-              })}
-            >
-              {name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <button
-        className={hamburger_element}
-        onClick={(e) => {
-          e.stopPropagation();
-          setShowMenu((prev) => !prev);
-        }}
-      >
-        {showMenu ? <CloseIcon /> : <HamburgerIcon />}
-      </button>
-    </header>
+    </>
   );
 };
 
